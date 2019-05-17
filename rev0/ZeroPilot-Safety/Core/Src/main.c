@@ -27,6 +27,7 @@
 #include "spi.h"
 #include "tim.h"
 #include "usart.h"
+#include "wwdg.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -107,6 +108,7 @@ int main(void)
   MX_USART2_UART_Init();
   MX_IWDG_Init();
   MX_RTC_Init();
+  MX_WWDG_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */

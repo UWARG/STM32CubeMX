@@ -1,0 +1,159 @@
+ARM GAS  /var/folders/vr/85797ndx6jd_r3n_lsprlrj40000gn/T//ccAN43Vt.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 2
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"iwdg.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.MX_IWDG_Init,"ax",%progbits
+  16              		.align	1
+  17              		.p2align 2,,3
+  18              		.global	MX_IWDG_Init
+  19              		.arch armv6s-m
+  20              		.syntax unified
+  21              		.code	16
+  22              		.thumb_func
+  23              		.fpu softvfp
+  25              	MX_IWDG_Init:
+  26              	.LFB37:
+  27              		.file 1 "Core/Src/iwdg.c"
+   1:Core/Src/iwdg.c **** /**
+   2:Core/Src/iwdg.c ****   ******************************************************************************
+   3:Core/Src/iwdg.c ****   * File Name          : IWDG.c
+   4:Core/Src/iwdg.c ****   * Description        : This file provides code for the configuration
+   5:Core/Src/iwdg.c ****   *                      of the IWDG instances.
+   6:Core/Src/iwdg.c ****   ******************************************************************************
+   7:Core/Src/iwdg.c ****   * @attention
+   8:Core/Src/iwdg.c ****   *
+   9:Core/Src/iwdg.c ****   * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
+  10:Core/Src/iwdg.c ****   * All rights reserved.</center></h2>
+  11:Core/Src/iwdg.c ****   *
+  12:Core/Src/iwdg.c ****   * This software component is licensed by ST under BSD 3-Clause license,
+  13:Core/Src/iwdg.c ****   * the "License"; You may not use this file except in compliance with the
+  14:Core/Src/iwdg.c ****   * License. You may obtain a copy of the License at:
+  15:Core/Src/iwdg.c ****   *                        opensource.org/licenses/BSD-3-Clause
+  16:Core/Src/iwdg.c ****   *
+  17:Core/Src/iwdg.c ****   ******************************************************************************
+  18:Core/Src/iwdg.c ****   */
+  19:Core/Src/iwdg.c **** 
+  20:Core/Src/iwdg.c **** /* Includes ------------------------------------------------------------------*/
+  21:Core/Src/iwdg.c **** #include "iwdg.h"
+  22:Core/Src/iwdg.c **** 
+  23:Core/Src/iwdg.c **** /* USER CODE BEGIN 0 */
+  24:Core/Src/iwdg.c **** 
+  25:Core/Src/iwdg.c **** /* USER CODE END 0 */
+  26:Core/Src/iwdg.c **** 
+  27:Core/Src/iwdg.c **** IWDG_HandleTypeDef hiwdg;
+  28:Core/Src/iwdg.c **** 
+  29:Core/Src/iwdg.c **** /* IWDG init function */
+  30:Core/Src/iwdg.c **** void MX_IWDG_Init(void)
+  31:Core/Src/iwdg.c **** {
+ARM GAS  /var/folders/vr/85797ndx6jd_r3n_lsprlrj40000gn/T//ccAN43Vt.s 			page 2
+
+
+  28              		.loc 1 31 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32:Core/Src/iwdg.c **** 
+  33:Core/Src/iwdg.c ****   hiwdg.Instance = IWDG;
+  32              		.loc 1 33 3 view .LVU1
+  33              		.loc 1 33 18 is_stmt 0 view .LVU2
+  34 0000 0848     		ldr	r0, .L8
+  35 0002 094B     		ldr	r3, .L8+4
+  31:Core/Src/iwdg.c **** 
+  36              		.loc 1 31 1 view .LVU3
+  37 0004 10B5     		push	{r4, lr}
+  38              	.LCFI0:
+  39              		.cfi_def_cfa_offset 8
+  40              		.cfi_offset 4, -8
+  41              		.cfi_offset 14, -4
+  42              		.loc 1 33 18 view .LVU4
+  43 0006 0360     		str	r3, [r0]
+  34:Core/Src/iwdg.c ****   hiwdg.Init.Prescaler = IWDG_PRESCALER_4;
+  44              		.loc 1 34 3 is_stmt 1 view .LVU5
+  45              		.loc 1 34 24 is_stmt 0 view .LVU6
+  46 0008 0023     		movs	r3, #0
+  47 000a 4360     		str	r3, [r0, #4]
+  35:Core/Src/iwdg.c ****   hiwdg.Init.Window = 4095;
+  48              		.loc 1 35 3 is_stmt 1 view .LVU7
+  49              		.loc 1 35 21 is_stmt 0 view .LVU8
+  50 000c 074B     		ldr	r3, .L8+8
+  51 000e C360     		str	r3, [r0, #12]
+  36:Core/Src/iwdg.c ****   hiwdg.Init.Reload = 4095;
+  52              		.loc 1 36 3 is_stmt 1 view .LVU9
+  53              		.loc 1 36 21 is_stmt 0 view .LVU10
+  54 0010 8360     		str	r3, [r0, #8]
+  37:Core/Src/iwdg.c ****   if (HAL_IWDG_Init(&hiwdg) != HAL_OK)
+  55              		.loc 1 37 3 is_stmt 1 view .LVU11
+  56              		.loc 1 37 7 is_stmt 0 view .LVU12
+  57 0012 FFF7FEFF 		bl	HAL_IWDG_Init
+  58              	.LVL0:
+  59              		.loc 1 37 6 view .LVU13
+  60 0016 0028     		cmp	r0, #0
+  61 0018 00D1     		bne	.L7
+  62              	.L1:
+  38:Core/Src/iwdg.c ****   {
+  39:Core/Src/iwdg.c ****     Error_Handler();
+  40:Core/Src/iwdg.c ****   }
+  41:Core/Src/iwdg.c **** 
+  42:Core/Src/iwdg.c **** }
+  63              		.loc 1 42 1 view .LVU14
+  64              		@ sp needed
+  65 001a 10BD     		pop	{r4, pc}
+  66              	.L7:
+  39:Core/Src/iwdg.c ****   }
+  67              		.loc 1 39 5 is_stmt 1 view .LVU15
+  68 001c FFF7FEFF 		bl	Error_Handler
+  69              	.LVL1:
+  70              		.loc 1 42 1 is_stmt 0 view .LVU16
+  71 0020 FBE7     		b	.L1
+ARM GAS  /var/folders/vr/85797ndx6jd_r3n_lsprlrj40000gn/T//ccAN43Vt.s 			page 3
+
+
+  72              	.L9:
+  73 0022 C046     		.align	2
+  74              	.L8:
+  75 0024 00000000 		.word	hiwdg
+  76 0028 00300040 		.word	1073754112
+  77 002c FF0F0000 		.word	4095
+  78              		.cfi_endproc
+  79              	.LFE37:
+  81              		.comm	hiwdg,16,4
+  82              		.text
+  83              	.Letext0:
+  84              		.file 2 "/usr/local/Cellar/arm-gcc-bin/8-2018-q4-major/arm-none-eabi/include/machine/_default_type
+  85              		.file 3 "/usr/local/Cellar/arm-gcc-bin/8-2018-q4-major/arm-none-eabi/include/sys/_stdint.h"
+  86              		.file 4 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h"
+  87              		.file 5 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f030xc.h"
+  88              		.file 6 "/usr/local/Cellar/arm-gcc-bin/8-2018-q4-major/arm-none-eabi/include/sys/lock.h"
+  89              		.file 7 "/usr/local/Cellar/arm-gcc-bin/8-2018-q4-major/arm-none-eabi/include/sys/_types.h"
+  90              		.file 8 "/usr/local/Cellar/arm-gcc-bin/8-2018-q4-major/lib/gcc/arm-none-eabi/8.2.1/include/stddef.
+  91              		.file 9 "/usr/local/Cellar/arm-gcc-bin/8-2018-q4-major/arm-none-eabi/include/sys/reent.h"
+  92              		.file 10 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_iwdg.h"
+  93              		.file 11 "Core/Inc/iwdg.h"
+  94              		.file 12 "Core/Inc/main.h"
+  95              		.file 13 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h"
+ARM GAS  /var/folders/vr/85797ndx6jd_r3n_lsprlrj40000gn/T//ccAN43Vt.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 iwdg.c
+/var/folders/vr/85797ndx6jd_r3n_lsprlrj40000gn/T//ccAN43Vt.s:16     .text.MX_IWDG_Init:0000000000000000 $t
+/var/folders/vr/85797ndx6jd_r3n_lsprlrj40000gn/T//ccAN43Vt.s:25     .text.MX_IWDG_Init:0000000000000000 MX_IWDG_Init
+/var/folders/vr/85797ndx6jd_r3n_lsprlrj40000gn/T//ccAN43Vt.s:75     .text.MX_IWDG_Init:0000000000000024 $d
+                            *COM*:0000000000000010 hiwdg
+
+UNDEFINED SYMBOLS
+HAL_IWDG_Init
+Error_Handler
